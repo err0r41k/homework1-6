@@ -1,1 +1,42 @@
 import java.util.Scanner;
+
+class Store {
+    String name;
+
+    public Store(String name) {
+        this.name = name;
+    }
+}
+
+class Revisor {
+    public void closeStore(Store store) {
+        if (store.name.equals("IKEA")) {
+            store.name = null;
+        }
+    }
+
+    public void rebrand(Store store) {
+        if (store.name.equals("MacDonalds")) {
+            store.name = "Вкусно и точка";
+        } else {
+            store.name = store.name.substring(1);
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введите название магазина: ");
+        String storeName = scanner.nextLine();
+        Store store = new Store(storeName);
+
+        Revisor revisor = new Revisor();
+        revisor.closeStore(store);
+        revisor.rebrand(store);
+
+        System.out.println(store.name);
+    }
+}
+
