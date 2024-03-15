@@ -1,5 +1,4 @@
-import java.util.Scanner;
-
+package Homework1_6;
 class Store {
     String name;
 
